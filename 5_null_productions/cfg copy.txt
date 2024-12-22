@@ -1,0 +1,3 @@
+X -> Ad | iAe | AB | Bd
+A -> gAe | uB | r | #
+B -> A | mB | i | # 

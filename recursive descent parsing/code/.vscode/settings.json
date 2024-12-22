@@ -1,0 +1,12 @@
+{
+  "files.associations": {
+    "*.erd": "json",
+    "*.vuerd": "json",
+    "*.ejs": "html",
+    "ostream": "cpp",
+    "iosfwd": "cpp",
+    "iostream": "cpp",
+    "iomanip": "cpp",
+    "sstream": "cpp"
+  }
+}

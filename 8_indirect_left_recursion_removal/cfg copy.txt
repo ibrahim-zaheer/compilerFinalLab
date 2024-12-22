@@ -1,0 +1,3 @@
+S -> X Y | i S a | Y e
+X -> i | Y u | r Y
+Y -> S m | X g | q

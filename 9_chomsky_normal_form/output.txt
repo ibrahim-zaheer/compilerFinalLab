@@ -1,0 +1,43 @@
+ORIGINAL CFG: 
+S -> A S A  | a B  | 
+A -> S  | a B  | 
+B -> #  | b  | 
+
+After performing first step of CNF conversion...
+S' -> S  | 
+S -> A S A  | a B  | 
+A -> S  | a B  | 
+B -> #  | b  | 
+
+After removing null productions...
+S' -> S  | 
+S -> A S A  | a  | a B  | 
+A -> S  | a  | a B  | 
+B -> b  | 
+
+After removing unit productions...
+S' -> A S A  | a  | a B  | 
+S -> A S A  | a  | a B  | 
+A -> A S A  | a  | a B  | 
+B -> b  | 
+
+After performing fourth step of CNF conversion...
+S' -> A C  | a  | a B  | 
+S -> A D  | a  | a B  | 
+A -> A E  | a  | a B  | 
+B -> b  | 
+C -> S A  | 
+D -> S A  | 
+E -> S A  | 
+
+After performing fifth step of CNF conversion...
+S' -> A C  | F B  | a  | 
+S -> A D  | G B  | a  | 
+A -> A E  | H B  | a  | 
+B -> b  | 
+C -> S A  | 
+D -> S A  | 
+E -> S A  | 
+F -> a  | 
+G -> a  | 
+H -> a  | 

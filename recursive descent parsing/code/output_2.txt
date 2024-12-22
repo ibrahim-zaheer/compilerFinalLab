@@ -1,0 +1,19 @@
+Stack                                             Input                                             Output                                            
+$                                                 the caught chased the cat $                       SENTENCE -> NOUNPHRASE VERBPHRASE                 
+VERBPHRASE $                                      the caught chased the cat $                       NOUNPHRASE -> DETERMINER NOUN NOUNPHRASE'         
+NOUN NOUNPHRASE' VERBPHRASE $                     the caught chased the cat $                       DETERMINER -> the                                 
+the NOUN NOUNPHRASE' VERBPHRASE $                 the caught chased the cat $                       Matched the                                       
+NOUN NOUNPHRASE' VERBPHRASE $                     caught chased the cat $                           ERROR AT INPUT: caught                            
+VERBPHRASE $                                      caught chased the cat $                           NOUNPHRASE' -> #                                  
+$                                                 caught chased the cat $                           VERBPHRASE -> caught VERBPHRASE''                 
+caught VERBPHRASE'' $                             caught chased the cat $                           Matched caught                                    
+VERBPHRASE'' $                                    chased the cat $                                  ERROR AT INPUT: chased                            
+$                                                 the cat $                                         VERBPHRASE'' -> NOUNPHRASE VERBPHRASE'            
+VERBPHRASE' $                                     the cat $                                         NOUNPHRASE -> DETERMINER NOUN NOUNPHRASE'         
+NOUN NOUNPHRASE' VERBPHRASE' $                    the cat $                                         DETERMINER -> the                                 
+the NOUN NOUNPHRASE' VERBPHRASE' $                the cat $                                         Matched the                                       
+NOUNPHRASE' VERBPHRASE' $                         cat $                                             NOUN -> cat                                       
+cat NOUNPHRASE' VERBPHRASE' $                     cat $                                             Matched cat                                       
+VERBPHRASE' $                                     $                                                 NOUNPHRASE' -> #                                  
+$                                                 $                                                 VERBPHRASE' -> #                                  
+FINSIHED

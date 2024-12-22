@@ -1,0 +1,3 @@
+EXPR -> EXPR + F | F
+F -> F * G | G
+G -> (EXPR) | id

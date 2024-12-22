@@ -1,0 +1,2 @@
+X -> X a | Y d | e
+Y -> X i | g
