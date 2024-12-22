@@ -46,6 +46,8 @@ bool RecursiveDescentParser::parse() {
 }
 
 bool RecursiveDescentParser::parse_rule(const string& non_terminal) {
+    cout << "Attempting to parse rule for: " << non_terminal << endl;
+
     if (grammar.find(non_terminal) == grammar.end()) {
         throw runtime_error("Error: Unknown non-terminal: " + non_terminal);
     }
@@ -53,19 +55,20 @@ bool RecursiveDescentParser::parse_rule(const string& non_terminal) {
     vector<string> productions = grammar[non_terminal];
     for (const string& production : productions) {
         size_t saved_position = current_token;
+        cout << "Testing production: " << production << " at token: " << get_current_token() << endl;
         stringstream ss(production);
         string token;
         bool success = true;
 
         while (ss >> token) {
             if (Rule::is_non_terminal_token(token)) {
-                // Recurse on non-terminal
+                cout << "Recursing on non-terminal: " << token << endl;
                 if (!parse_rule(token)) {
                     success = false;
                     break;
                 }
             } else {
-                // Match terminal
+                cout << "Matching terminal: " << token << " with " << get_current_token() << endl;
                 if (get_current_token() == token) {
                     advance_token();
                 } else {
@@ -79,6 +82,7 @@ bool RecursiveDescentParser::parse_rule(const string& non_terminal) {
 
         // Backtrack to the saved position
         current_token = saved_position;
+        cout << "Backtracking to position: " << saved_position << endl;
     }
     return false;
 }
